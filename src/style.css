@@ -1513,10 +1513,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Assign background images to hover cards */
-.philosophy-grid .philosophy-card:nth-child(1)::before { background-image: url('/src/assets/philosophy-1.webp'); }
-.philosophy-grid .philosophy-card:nth-child(2)::before { background-image: url('/src/assets/philosophy-2.webp'); }
-.philosophy-grid .philosophy-card:nth-child(3)::before { background-image: url('/src/assets/project-thesis.webp'); }
-.philosophy-grid .philosophy-card:nth-child(4)::before { background-image: url('/src/assets/welcome.webp'); }
+.philosophy-grid .philosophy-card:nth-child(1)::before { background-image: url('/assets/philosophy-1.webp'); }
+.philosophy-grid .philosophy-card:nth-child(2)::before { background-image: url('/assets/philosophy-2.webp'); }
+.philosophy-grid .philosophy-card:nth-child(3)::before { background-image: url('/assets/project-thesis.webp'); }
+.philosophy-grid .philosophy-card:nth-child(4)::before { background-image: url('/assets/welcome.webp'); }
 
 /* ==========================================================================
    HOME PAGE - THESIS SHOWCASE
