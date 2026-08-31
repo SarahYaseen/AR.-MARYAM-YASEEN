@@ -643,6 +643,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-bg-dark);
   display: flex;
   align-items: center;
+  padding-top: var(--header-height); /* pushes content below the sticky header logo */
   padding-left: clamp(4rem, 8vw, 8rem);
   padding-right: 3rem;
   z-index: 5;
