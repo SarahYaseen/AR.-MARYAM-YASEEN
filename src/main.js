@@ -504,10 +504,21 @@ window.addEventListener("scroll", () => {
 
 // Back to Top functionality
 const backToTopBtn = document.getElementById("back-to-top-btn");
-if (backToTopBtn) {
-  backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+const footerBackToTop = document.getElementById("footer-back-to-top");
+
+function scrollToTop() {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({
+    top: 0,
+    behavior: prefersReducedMotion ? "instant" : "smooth"
   });
+}
+
+if (backToTopBtn) {
+  backToTopBtn.addEventListener("click", scrollToTop);
+}
+if (footerBackToTop) {
+  footerBackToTop.addEventListener("click", scrollToTop);
 }
 
 // --------------------------------------------------------------------------
