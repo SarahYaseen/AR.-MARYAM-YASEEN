@@ -76,4 +76,9 @@
   - [x] Implement staggered column reveals and smooth-scroll back-to-top handler (respecting motion preferences)
   - [x] Configure CSS column stack overrides on tablet and mobile viewports
   - [x] Verify production build and push final changes to origin main branch
+- [x] **Phase 11: Featured Thesis Section Interaction**
+  - [x] Make entire thesis showcase container clickable to launch thesis details modal
+  - [x] Set cursor pointer and scale-up image zoom transition on section hover
+  - [x] Add thesis showcase container to custom cursor hoverable triggers
+  - [x] Verify production build and push to origin main branch
 
