@@ -1568,6 +1568,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .thesis-showcase-bg {
@@ -1584,6 +1585,11 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transition: transform var(--transition-slow);
+}
+
+.thesis-showcase:hover .thesis-showcase-bg img {
+  transform: scale(1.04);
 }
 
 .thesis-overlay {

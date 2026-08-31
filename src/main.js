@@ -395,7 +395,7 @@ if (cursor) {
   });
 
   // Add hover effect to interactive items
-  const hoverables = document.querySelectorAll("a, button, input, textarea, .project-card, .philosophy-card");
+  const hoverables = document.querySelectorAll("a, button, input, textarea, .project-card, .philosophy-card, .thesis-showcase");
   hoverables.forEach(item => {
     item.addEventListener("mouseenter", () => cursor.classList.add("hover"));
     item.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
@@ -412,6 +412,17 @@ if (cursor) {
     });
     heroImageContainer.addEventListener("click", () => {
       window.location.hash = "#project-research-visitor-center";
+    });
+  }
+
+  // Click handler to open the thesis details on the thesis showcase section
+  const thesisShowcase = document.querySelector(".thesis-showcase");
+  if (thesisShowcase) {
+    thesisShowcase.addEventListener("click", (e) => {
+      // Only navigate if the user didn't click a link to avoid double navigation triggers
+      if (!e.target.closest("a") && !e.target.closest("button")) {
+        window.location.hash = "#project-research-visitor-center";
+      }
     });
   }
 }
