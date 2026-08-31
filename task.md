@@ -1,0 +1,52 @@
+# Tasks - Architecture Portfolio Website
+
+- [x] **Phase 1: Content & Asset Extraction**
+  - [x] Set up temporary python script to extract text and images from PDF
+  - [x] Extract and verify text content (save as text files for easy reference)
+  - [x] Extract and optimize images (save as PNG/WebP files)
+- [x] **Phase 2: Project Scaffolding & Setup**
+  - [x] Create Vite project structure (`package.json`, `vite.config.js`)
+  - [x] Configure dev dependencies and scripts
+  - [x] Verify local dev server can run
+- [x] **Phase 3: Core Styles & Layout**
+  - [x] Set up global CSS tokens (colors, typography, margins)
+  - [x] Implement sticky header, nav links, mobile hamburger menu
+  - [x] Create base page layout structure (Home, Portfolio, Contact sections)
+- [x] **Phase 4: Page Implementations**
+  - [x] Home Page
+    - [x] Hero section with big typography, background image zoom, reveal animations
+    - [x] About section with editorial typography
+    - [x] Design Philosophy hover-cards
+    - [x] Work Timeline (responsive horizontal/vertical drawing timeline)
+    - [x] Experience list
+    - [x] Featured Projects preview cards
+  - [x] Portfolio Page
+    - [x] Category filter tabs (All, Academic, Professional, etc.)
+    - [x] Masonry/editorial grid layout
+    - [x] Fully functional filtering logic
+  - [x] Project Detail Overlay Modal
+    - [x] Modal layout with hero, details, description, process, drawings gallery, and prev/next links
+    - [x] URL hash synchronization (`#project-<name>`) for direct links and history support
+  - [x] Contact Page
+    - [x] Contact details links (clickable phone/email)
+    - [x] Form layout and styling
+    - [x] Form validation, success/error feedback, and mock backend integration
+- [x] **Phase 5: Animations & Polish**
+  - [x] Implement smooth scroll behavior and micro-interactions
+  - [x] Add entrance reveals, parallax zoom on images, timeline drawing animation
+  - [x] Ensure `prefers-reduced-motion` compliance
+- [x] **Phase 6: Verification & SEO**
+  - [x] Verify responsiveness at all target viewports (1440px down to 360px)
+  - [x] Check accessibility (contrast, labels, landmarks)
+  - [x] Inject SEO titles, meta tags, and open graph data
+  - [x] Clean up console errors and verify all links (including documentary link)
+- [x] **Phase 7: Website Update — Remove Numbering + Testimonials**
+  - [x] Remove all decorative/project numbering throughout the website (hero index, section badges, philosophy card numbers, project grid indices, modal counts)
+  - [x] Preserve genuine years (2022-2026), phone numbers, dates, and project title specs (e.g. 2 Kanal House, 10 Marla House)
+  - [x] Add Testimonials section HTML structure to Home page view (asymmetrical editorial breakout)
+  - [x] Implement dynamic collaborator feedback data system (quote, name, role/company, project)
+  - [x] Add horizontal Testimonials slider mechanics (Working navigation arrows `←` and `→`, touch swipe on mobile, auto-slide every 6s, pause on hover)
+  - [x] Style slide transitions with slow transform/opacity and staggered author reveal
+  - [x] Add horizontal progress line indicator (no numerical slide counts)
+  - [x] Support `prefers-reduced-motion` and accessibility features (keyboard arrows, screen-reader labels)
+  - [x] Compile production build successfully with zero errors
