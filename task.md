@@ -61,4 +61,11 @@
   - [x] Adjust Awards Timeline breakpoint to 768px for cleaner tablet rendering
   - [x] Implement touch target sizing helpers (min 44px) on form controls and footer links
   - [x] Run production builds and verify locally on all screen widths (1440px down to 360px)
+- [x] **Phase 9: Project Images Restoration**
+  - [x] Identify root cause of disappearing images (Vite dynamic absolute path compile exclusion)
+  - [x] Create public/assets folder and copy all original WebP image assets
+  - [x] Update all image paths from /src/assets/ to /assets/ in src/main.js, index.html, and src/style.css
+  - [x] Verify filenames and paths match exactly in lowercase for case-sensitive Linux/Vercel support
+  - [x] Run Vite production compiler successfully with zero errors
+  - [x] Commit and push changes to origin main branch
 
