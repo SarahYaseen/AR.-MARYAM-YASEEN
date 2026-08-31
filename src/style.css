@@ -410,7 +410,8 @@ h1, h2, h3, h4, h5, h6 {
   gap: 2.5rem;
 }
 
-.nav-link {
+.nav-link,
+.nav-link:visited {
   font-family: var(--font-sans);
   font-size: 0.75rem;
   font-weight: 600;
@@ -418,6 +419,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.5rem 0;
   position: relative;
   transition: color var(--transition-fast);
+  color: inherit;
 }
 
 .nav-link::after {
@@ -431,15 +433,18 @@ h1, h2, h3, h4, h5, h6 {
   transition: width var(--transition-medium);
 }
 
-.nav-link:hover, .nav-link.active {
-  color: var(--color-accent);
+.nav-link:hover,
+.nav-link.active,
+.nav-link.active:visited {
+  color: var(--color-accent) !important;
 }
 
 .nav-link.active::after, .nav-link:hover::after {
   width: 100%;
 }
 
-.cta-button {
+.cta-button,
+.cta-button:visited {
   font-family: var(--font-sans);
   font-size: 0.7rem;
   font-weight: 700;
@@ -456,7 +461,8 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-accent);
 }
 
-.on-dark-section .cta-button {
+.on-dark-section .cta-button,
+.on-dark-section .cta-button:visited {
   background-color: var(--color-accent);
   color: var(--color-text-light);
 }
@@ -550,7 +556,8 @@ h1, h2, h3, h4, h5, h6 {
   gap: 2rem;
 }
 
-.mobile-nav-link {
+.mobile-nav-link,
+.mobile-nav-link:visited {
   font-family: var(--font-primary);
   font-size: clamp(2rem, 8vw, 3rem);
   color: var(--color-text-light);
@@ -558,8 +565,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: color var(--transition-fast), transform var(--transition-medium);
 }
 
-.mobile-nav-link:hover, .mobile-nav-link.active {
-  color: var(--color-accent);
+.mobile-nav-link:hover,
+.mobile-nav-link.active,
+.mobile-nav-link.active:visited {
+  color: var(--color-accent) !important;
   transform: translateX(10px);
 }
 

@@ -1144,7 +1144,7 @@ function initTestimonialsSlider() {
 // --------------------------------------------------------------------------
 // 10. INITIALIZATION
 // --------------------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", () => {
+function initializeApp() {
   // Render projects
   renderFeaturedProjects();
   renderPortfolioGrid();
@@ -1159,4 +1159,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     animateTimelineProgress();
   });
-});
+}
+
+// Safely initialize the application based on DOM readiness
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeApp);
+} else {
+  initializeApp();
+}
