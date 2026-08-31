@@ -344,9 +344,37 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: inherit;
+  color: var(--color-text-dark); /* default dark text */
   transition: opacity var(--transition-fast);
   white-space: nowrap; /* prevent wrapping under all circumstances */
+}
+
+.logo:visited {
+  color: inherit;
+}
+
+/* Force light logo on dark section */
+.main-header.on-dark-section .logo,
+.main-header.on-dark-section .logo:visited {
+  color: var(--color-text-light) !important;
+}
+
+/* Force dark logo on light scrolled section */
+.main-header.scrolled .logo,
+.main-header.scrolled .logo:visited {
+  color: var(--color-text-dark) !important;
+}
+
+/* Force light logo on dark scrolled section */
+.main-header.on-dark-section.scrolled .logo,
+.main-header.on-dark-section.scrolled .logo:visited {
+  color: var(--color-text-light) !important;
+}
+
+/* Force light logo when mobile menu drawer is open */
+.main-header.mobile-menu-open .logo,
+.main-header.mobile-menu-open .logo:visited {
+  color: var(--color-text-light) !important;
 }
 
 @media (max-width: 380px) {
