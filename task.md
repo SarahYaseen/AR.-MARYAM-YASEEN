@@ -50,3 +50,15 @@
   - [x] Add horizontal progress line indicator (no numerical slide counts)
   - [x] Support `prefers-reduced-motion` and accessibility features (keyboard arrows, screen-reader labels)
   - [x] Compile production build successfully with zero errors
+- [ ] **Phase 8: Responsive Fix + Logo Cleanup**
+  - [/] Remove duplicate/unwanted text behind/around the logo (ensure single instance of "AR. MARYAM YASEEN")
+  - [/] Enable header transparent color overlay override when mobile menu drawer is open
+  - [/] Add ESC key, click outside, and body scroll prevention to mobile menu drawer overlay
+  - [/] Ensure active hamburger icon turns white to remain visible on the dark drawer background
+  - [/] Fix Career Timeline horizontal-to-vertical conversion layout and drawing animation on mobile
+  - [/] Optimize Portfolio filters scroll swipe layout
+  - [/] Float modal details close button as fixed on mobile (UX enhancement)
+  - [/] Adjust Awards Timeline breakpoint to 768px for cleaner tablet rendering
+  - [/] Implement touch target sizing helpers (min 44px) on form controls and footer links
+  - [/] Run production builds and verify locally on all screen widths (1440px down to 360px)
+

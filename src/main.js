@@ -336,15 +336,35 @@ window.addEventListener("hashchange", handleRoute);
 const hamburgerBtn = document.getElementById("hamburger-btn");
 const mobileMenuOverlay = document.getElementById("mobile-menu-overlay");
 
-if (hamburgerBtn) {
+if (hamburgerBtn && mobileMenuOverlay) {
   hamburgerBtn.addEventListener("click", () => {
     const isExpanded = hamburgerBtn.getAttribute("aria-expanded") === "true";
     hamburgerBtn.setAttribute("aria-expanded", !isExpanded);
     hamburgerBtn.classList.toggle("active");
     mobileMenuOverlay.classList.toggle("active");
     
-    // Toggle body overflow scroll lock
-    document.body.style.overflow = isExpanded ? "" : "hidden";
+    // Toggle body overflow scroll lock and header menu class
+    if (!isExpanded) {
+      header.classList.add("mobile-menu-open");
+      document.body.style.overflow = "hidden";
+    } else {
+      header.classList.remove("mobile-menu-open");
+      document.body.style.overflow = "";
+    }
+  });
+
+  // Close when clicking outside of the content container
+  mobileMenuOverlay.addEventListener("click", (e) => {
+    if (e.target === mobileMenuOverlay) {
+      closeMobileMenu();
+    }
+  });
+
+  // Close when pressing Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeMobileMenu();
+    }
   });
 }
 
@@ -353,6 +373,7 @@ function closeMobileMenu() {
     hamburgerBtn.classList.remove("active");
     hamburgerBtn.setAttribute("aria-expanded", "false");
     mobileMenuOverlay.classList.remove("active");
+    header.classList.remove("mobile-menu-open");
     document.body.style.overflow = "";
   }
 }
@@ -532,7 +553,7 @@ function animateTimelineProgress() {
   const viewportHeight = window.innerHeight;
   
   // Calculate percentage of timeline section scrolled past
-  // Start drawing line when section top is 50% down viewport, finish when bottom is 20% down
+  // Start drawing line when section top is 60% down viewport, finish when bottom is 20% down
   const startOffset = viewportHeight * 0.6;
   const scrollIn = startOffset - rect.top;
   const totalDuration = sectionHeight;
@@ -540,7 +561,14 @@ function animateTimelineProgress() {
   let pct = scrollIn / totalDuration;
   pct = Math.max(0, Math.min(1, pct)); // Clamp between 0 and 1
   
-  fill.style.width = (pct * 100) + "%";
+  const isMobile = window.innerWidth <= 900;
+  if (isMobile) {
+    fill.style.width = "100%";
+    fill.style.height = (pct * 100) + "%";
+  } else {
+    fill.style.width = (pct * 100) + "%";
+    fill.style.height = "100%";
+  }
   
   // Highlight markers
   const markers = timelineSection.querySelectorAll(".timeline-marker");
@@ -548,8 +576,11 @@ function animateTimelineProgress() {
   
   items.forEach((item, idx) => {
     const itemRect = item.getBoundingClientRect();
-    // Highlight if marker crosses the line
-    if (itemRect.left < window.innerWidth / 2 || idx === 0) {
+    const isPast = isMobile 
+      ? (itemRect.top < viewportHeight * 0.6)
+      : (itemRect.left < window.innerWidth / 2 || idx === 0);
+      
+    if (isPast || idx === 0) {
       markers[idx].style.borderColor = "var(--color-accent)";
       markers[idx].style.backgroundColor = "var(--color-accent)";
     } else {
